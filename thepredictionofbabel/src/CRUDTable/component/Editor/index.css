@@ -1,0 +1,13 @@
+#ColumnEditorPanel {
+    background-color: rgb(38, 131, 130);
+    color: rgb(0, 0, 0);
+    height: 450px;
+    width: 700px;
+    padding: 10px;
+}
+#ColumnEditorPanel button,h1{
+    font-size: 15px;
+}
+#ColumnEditorPanel h1 {
+    font-size: 30px;
+}
