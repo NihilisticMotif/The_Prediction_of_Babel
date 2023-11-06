@@ -1,0 +1,133 @@
+Folder Structure
+[src]
+ * [Components]
+    // WebApp for Data Visualization and Simulation
+    * [Asset]
+        // Aesthetic Drawing and Image
+    * [C00_Header]
+        * [subcomponents]
+        * index.css
+        * index.js
+        * index.txt
+    * [C...]
+        * [subcomponents]
+        * index.css
+        * index.js
+        * index.txt
+    * [C99_Utility]
+        // C00,C01,...,C99 folders = React FrontEnd Components
+        * [subcomponents]
+        * index.css
+        * index.js
+        * index.txt
+    * [DefaultDataSet]
+    * index.css
+    * index.js
+    * index.txt
+ * [InteractiveDocument]
+    // Page that teaches Stats, ML and Numerical Method
+ * [Useless] 
+    // The previous code that I want to modity, 
+    // and is not used in final product.
+ * App.css
+ * App.js
+ * App.text.js
+ * index.css
+ * index.js
+ * reportWebVitals.js 
+ * setupTests.js 
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Every Variable name in [Components] folder must begin with 'C' + ParentFolderIndex, except variable in index.js and index.css
+
+ID,Key,Class of the Components = 'C' + ParentFolderIndex + 'id_' + [HTMLTags.CapitalLetter(),AnyName]
+e.g. C01id_Button, C02id_Input, C01id_Table, C03id_Button02 etc.
+
+Component in subcomponents folder = 'C' + ParentFolderIndex + 'Sub' + ['C','R','U','D',None] + '_' + [Subject,AnyName]
+e.g. C01SubC_Column etc.
+// Component in subcomponents folder = ['C','R','U','D',None] + '_' + [Subject,AnyName]
+// e.g. C_Column etc.
+
+ListOfVariableA = VariableA + 'S'
+e.g. C01SquareS = [Square0,Square1,...,SquareN] etc.
+
+// const ['C' + ParentFolderIndex + 'State_' + Subject, set + 'C' + ParentFolderIndex + 'State_' + Subject] = useState(DefaultStateSubject)
+// e.g. C03State_ColumnName, useC03State_ColumnName etc.
+const ['SS_' + Subject, set + 'SS_' + Subject] = useState(DefaultStateSubject)
+e.g. SS_ColumnName, useSS_ColumnName etc.
+
+'HTML'+AngName
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Note
+ * Table similar to Excel and can be used for ML prediction and Data Visualization
+ * CRUD = Create Read Update Delete
+
+Table Page
+
+C00_Header (File Safing System and Open Panel)
+ * Import/Export Table
+ * Export All Data
+ * Export Filtered Data
+ * Export Visualized Data
+ * Save (Table, Visualization Setting, Filter Setting and etc.)
+ * Undo
+ * Open Documentation Page
+ * Open/Close New Panel
+
+C01_Table
+ * [C]
+ * Import/Export Table
+ * Create Index Column
+ * [R]
+ * Shape
+ * Correlation Matrix
+ * ColumnInspection
+ * [U]
+ * Update Column
+ * [D]
+ * Delete Table (Prompt: Do you want to export data?)
+
+C02_Column
+ * [C]
+ * np.linspace/np.arange
+ * duplicate column
+ * [R]
+ * Search Column
+ * [U]
+ * Rename
+ * IsSelect [Visual, ReadCell, ColumnInspection]
+ * Filter Editor [and,or,>,<,=,!=,<=,>=,IsNaN,IsInt] => [Visual, ReadCell, Replace, Delete]
+ * Transform Data
+ * [D]
+ * Delete
+
+C03_Row 
+ * [C]
+ * Create Row
+ * [R]
+ * Search Row
+ * [U]
+ * Update Row
+ * [D]
+ * Delete Row
+
+C04_Data Visualization
+ 4.1 Canvas
+ * Export Image
+ * Label XY and Title
+ 4.2 Visualization Setting
+ * [1D][DistributionHistogram]: DH(X, bin=30, IsScale)*RGBA*LineWidth
+ * [2D][Plot2D]: [X,Y] = [Col1,Col2]*RGBA*LineWidth
+ * [3D][Contour]: [X,Y,Z] = [Col1,Col2,Col3]*RGBA
+ 4.3 Visualization Filter
+ 
+C05_Machine Learning
+ * Model {Type: [Neural Network, Random Forest ...], function: [SelectType,Export/Import Type]}
+ * Create Predicted Column 
+ * Evaluation Score (Train Test Split, Final Score, EpochLoss)
+
+C06_Numerical Analysis
+ * etc.

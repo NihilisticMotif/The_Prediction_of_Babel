@@ -1,10 +1,15 @@
 import logo from './logo.svg';
 import './App.css';
-import CRUDTable from './CRUDTable/index'
+import CRUDTable from './Useless/index'
+import Components from './Components';
 function App() {
   return (
 <>
-<CRUDTable/>
+{/*
+  <CRUDTable/>
+  */}
+<Components/>
+
 </>
   );
 }

@@ -1,0 +1,20 @@
+const Row=()=>{
+    return (
+<tr>
+    <td>0</td>
+    <td>Hello             </td>
+    <td>33             </td>
+    <td>Male             </td>
+    <td><button>Delete</button>     </td>
+</tr>
+    )
+}
+
+<button>Filter</button>
+<button>Inspection</button>
+<button>Rename</button>
+<button>Replace</button>
+<button>Plot X</button>
+<button>Plot Y</button>
+<button>Hide</button>
+<button>Delete</button>

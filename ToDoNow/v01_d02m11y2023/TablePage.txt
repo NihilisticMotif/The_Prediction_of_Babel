@@ -4,14 +4,17 @@ Note
 
 Table Page
 
-0. File Saving System
+C00_Header (File Safing System and Open Panel)
  * Import/Export Table
  * Export All Data
  * Export Filtered Data
  * Export Visualized Data
  * Save (Table, Visualization Setting, Filter Setting and etc.)
+ * Undo
+ * Open Documentation Page
+ * Open/Close New Panel
 
-1. CRUDTable
+C01_Table
  * [C]
  * Import/Export Table
  * Create Index Column
@@ -24,7 +27,7 @@ Table Page
  * [D]
  * Delete Table (Prompt: Do you want to export data?)
 
-2. Column
+C02_Column
  * [C]
  * np.linspace/np.arange
  * duplicate column
@@ -38,7 +41,7 @@ Table Page
  * [D]
  * Delete
 
-3. Row 
+C03_Row 
  * [C]
  * Create Row
  * [R]
@@ -48,7 +51,7 @@ Table Page
  * [D]
  * Delete Row
 
-4. Data Visualization
+C04_Data Visualization
  4.1 Canvas
  * Export Image
  * Label XY and Title
@@ -56,11 +59,12 @@ Table Page
  * [1D][DistributionHistogram]: DH(X, bin=30, IsScale)*RGBA*LineWidth
  * [2D][Plot2D]: [X,Y] = [Col1,Col2]*RGBA*LineWidth
  * [3D][Contour]: [X,Y,Z] = [Col1,Col2,Col3]*RGBA
-
-5. Machine Learning
+ 4.3 Visualization Filter
+ 
+C05_Machine Learning
  * Model {Type: [Neural Network, Random Forest ...], function: [SelectType,Export/Import Type]}
  * Create Predicted Column 
  * Evaluation Score (Train Test Split, Final Score, EpochLoss)
 
-6. Numerical Analysis
+C06_Numerical Analysis
  * etc.

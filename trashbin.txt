@@ -1,2 +1,668 @@
+    // const [SSColumnName,setSSColumnName]=useState(ColumnName)
+ 
+//****************************************************************************
+// Output
+ 
+//****************************************************************************
+// Code
+ 
+//****************************************************************************
+// Input
+ 
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+const MainColumn = ({key,index,Name,Inspection,RenameOpen}) => {
+    // https://react.dev/learn/sharing-state-between-components
+    return(
+<>
+<div key={key}>
+<td><button class='Columns' onClick={Inspection}>{index}</button></td>
+<td><button class='Columns' onClick={RenameOpen}>Rename</button></td>
+<td><button class='Columns'>Edit</button></td>
+<td><button class='Columns'>Display</button></td>
+<td><h1 class='Columns'>{Name}</h1></td>
+</div>
+</>
+    )
+}
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////////////////////
+
+
+//const [IsRename,setIsRename]=useState(false)
+//const [YourName,setYourName]=useState(Name)
+//function RenameOpen(){setIsRename(true)}
+//let Column;
+//if (IsRename) {Column = <RenameColumn key={key}  Name={YourName} setName={setYourName} setIsRename={setIsRename}/>;}
+//else          {Column = <MainColumn   key={key} index={index} Name={YourName} Inspection={Inspection} RenameOpen={RenameOpen}/>;} 
+// {Column}
+ 
+Column
+ 
+Name
+ 
+Name
+ 
+Name
+ 
+Column
+ 
+Column
+ 
+Column
+ 
+Name
+ 
+Name
+ 
+ index={index+1}
+ 
+Name: 'Column Index'
+ 
+//
+ 
+        alert(NewColumn)
+ 
+Name
+ 
+Column
+ 
+olum
+ 
+Column
+ 
+Column
+ 
+.Name
+ 
+Colum
+ 
+,index
+ 
+index={index+1}
+ 
+import C_Column  from './subcomponents/C_Column';
+ 
+Name
+ 
+Name
+ 
+    const [SSColumnName,setSSColumnName]=useState(ColumnName)
+ 
+.C02id{
+    background-color: rgb(130, 165, 42);
+}
+ 
+    justify-content: space-between;
+ 
+    display: flex;
+ 
+background-color: rgb(130, 165, 42);
+ 
+_CheckButton
+ 
+05, 0, 0)
+ 
+  alert('Hello'+SSSelect.toString())
+ 
+        let Color=
+ 
+document.getElementById('C02id_CheckButton').style.backgroundColor
+ 
+        let Color=
+ 
+document.getElementById('C02id_CheckButton').style.backgroundColor
+ 
+.style.backgroundColor
+ 
+document.getElementById('C02id_CheckButton').style.backgroundColor
+ 
+document.getElementById('C02id_CheckButton').style.backgroundColor
+ 
+_CheckButton
+ 
+.C02id_CheckButton{
+    
+}
+ 
+ ='C02id_CheckButton'
+ 
+#C02id_CheckButton{
+    
+}
+ 
+.C02id_Checkbox {
+    width: 6em;
+    height: 6em;
+}
+
+.C02id_Checkbox input[type="checkbox"] {
+    width:  6em;
+    height: 6em;
+}
+ 
+input[type="checkbox"] 
+ 
+</label>
+ 
+    /* removing default appearance */
+    -webkit-appearance: none;
+    appearance: none;
+    /* creating a custom design */
+ 
+    border-radius: 0.15em;
+    margin-right: 0.5em;
+    border: 0.15em solid #007a7e;
+    outline: none;
+    cursor: pointer;
+ 
+input[type="checkbox"]
+ 
+<td>
+ 
+</td>
+ 
+.checkbox-wrapper 
+ 
+input.
+ 
+><
+ 
+.C02id_Checkbox input{
+    border: 1px solid rgb(205, 205, 205, 0);
+    border-left: 5px solid rgb(205, 205, 205, 0);
+    border-right: 5px solid rgb(205, 205, 205, 0);
+    width:100px
+}
+ 
+    font-size: 17px;
+ 
+{index}
+ 
+
+
+/* When the checkbox is checked, add a blue background */
+.container input[type=checkbox]:checked~.checkmark {
+    background-color: #2196F3;
+}
+ 
+/* On mouse-over, add a grey background color */
+.container:hover input[type=checkbox]~.checkmark {
+    background-color: #ccc;
+}
+ 
+:checked~.checkmark:after
+ 
+One
+ 
+<td>
+ 
+</td>
+ 
+type="checkbox" 
+ 
+/*
+<div class="C02id_Label">
+<input id="C02id_CheckBox" class="substituted" type="checkbox" aria-hidden="true" />
+<label for="C02id_CheckBox">Checkbox</label>
+</div>
+*/
+
+
+.C02id_Label ::after,
+.C02id_Label ::before {
+    box-sizing: border-box;
+}
+
+.C02id_Label [type=checkbox].substituted {
+    margin: 0;
+    width: 0;
+    height: 0;
+    display: inline;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.C02id_Label [type=checkbox].substituted+label:before {
+    content: "";
+    display: inline-block;
+    vertical-align: top;
+    height: 1.15em;
+    width: 1.15em;
+    margin-right: 0.6em;
+    color: rgba(0, 0, 0, 0.275);
+    border: solid 0.06em;
+    box-shadow: 0 0 0.04em, 0 0.06em 0.16em -0.03em inset, 0 0 0 0.07em transparent inset;
+    border-radius: 0.2em;
+    background: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xml:space="preserve" fill="white" viewBox="0 0 9 9"><rect x="0" y="4.3" transform="matrix(-0.707 -0.7072 0.7072 -0.707 0.5891 10.4702)" width="4.3" height="1.6" /><rect x="2.2" y="2.9" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 12.1877 2.9833)" width="6.1" height="1.7" /></svg>') no-repeat center, white;
+    background-size: 0;
+    will-change: color, border, background, background-size, box-shadow;
+    transform: translate3d(0, 0, 0);
+    transition: color 0.1s, border 0.1s, background 0.15s, box-shadow 0.1s;
+}
+
+.C02id_Label [type=checkbox].substituted:enabled:active+label:before,
+.C02id_Label [type=checkbox].substituted:enabled+label:active:before {
+    box-shadow: 0 0 0.04em, 0 0.06em 0.16em -0.03em transparent inset, 0 0 0 0.07em rgba(0, 0, 0, 0.1) inset;
+    background-color: #f0f0f0;
+}
+
+.C02id_Label [type=checkbox].substituted:checked+label:before {
+    background-color: #3B99FC;
+    background-size: 0.75em;
+    color: rgba(0, 0, 0, 0.075);
+}
+
+.C02id_Label [type=checkbox].substituted:checked:enabled:active+label:before,
+.C02id_Label [type=checkbox].substituted:checked:enabled+label:active:before {
+    background-color: #0a7ffb;
+    color: rgba(0, 0, 0, 0.275);
+}
+
+.C02id_Label [type=checkbox].substituted:focus+label:before {
+    box-shadow: 0 0 0.04em, 0 0.06em 0.16em -0.03em transparent inset, 0 0 0 0.07em rgba(0, 0, 0, 0.1) inset, 0 0 0 3.3px rgba(65, 159, 255, 0.55), 0 0 0 5px rgba(65, 159, 255, 0.3);
+}
+
+.C02id_Label [type=checkbox].substituted:focus:active+label:before,
+.C02id_Label [type=checkbox].substituted:focus+label:active:before {
+    box-shadow: 0 0 0.04em, 0 0.06em 0.16em -0.03em transparent inset, 0 0 0 0.07em rgba(0, 0, 0, 0.1) inset, 0 0 0 3.3px rgba(65, 159, 255, 0.55), 0 0 0 5px rgba(65, 159, 255, 0.3);
+}
+
+.C02id_Label [type=checkbox].substituted:disabled+label:before {
+    opacity: 0.5;
+}
+
+.C02id_Label [type=checkbox].substituted.dark+label:before {
+    color: rgba(255, 255, 255, 0.275);
+    background-color: #222;
+    background-image: url('data:image/svg+xml;charset=UTF-8,<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xml:space="preserve" fill="rgba(34, 34, 34, 0.999)" viewBox="0 0 9 9"><rect x="0" y="4.3" transform="matrix(-0.707 -0.7072 0.7072 -0.707 0.5891 10.4702)" width="4.3" height="1.6" /><rect x="2.2" y="2.9" transform="matrix(-0.7071 0.7071 -0.7071 -0.7071 12.1877 2.9833)" width="6.1" height="1.7" /></svg>');
+}
+
+.C02id_Label [type=checkbox].substituted.dark:enabled:active+label:before,
+.C02id_Label [type=checkbox].substituted.dark:enabled+label:active:before {
+    background-color: #444;
+    box-shadow: 0 0 0.04em, 0 0.06em 0.16em -0.03em transparent inset, 0 0 0 0.07em rgba(255, 255, 255, 0.1) inset;
+}
+
+.C02id_Label [type=checkbox].substituted.dark:checked+label:before {
+    background-color: #a97035;
+    color: rgba(255, 255, 255, 0.075);
+}
+
+.C02id_Label [type=checkbox].substituted.dark:checked:enabled:active+label:before,
+.C02id_Label [type=checkbox].substituted.dark:checked:enabled+label:active:before {
+    background-color: #c68035;
+    color: rgba(0, 0, 0, 0.275);
+}
+ 
+type="checkbox" 
+ 
+<style>.checkbox-wrapper-1 *,
+ 
+
+</style>
+ 
+<td>
+ 
+</td>
+ 
+ name="vehicle1" value="Bike"
+ 
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked~.checkmark {
+    background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked~.checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+    left: 9px;
+    top: 5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+ 
+ input
+ 
+display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+ 
+display: grid;
+ 
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+ 
+display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 22px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+ 
+    width: 100px;
+ 
+{index}
+ 
+<input type="checkbox" name="vehicle1" value="Bike"></input>
+ 
+    width: 30px;
+    height: 30px;
+ 
+,CIs,setCIs
+ 
+const RenameColumn = ({key,Name,setName,setIsRename}) => {
+    function RenameOK(){
+    setName(document.getElementById('NewName').value)
+    setIsRename(false)
+}
+function RenameCancel(){
+    setIsRename(false)
+}
+    return(
+<>
+<div key={key}>
+<td><h1 class='Columns'>Rename: {Name} to </h1></td>
+<td><input class='Columns' id='NewName'></input></td>
+<td><button class='Columns' onClick={RenameOK}>OK</button></td>
+<td><button class='Columns' onClick={RenameCancel}>Cancel</button></td>
+</div>
+</>
+    )
+}
+ 
+<>
+<div key={key}>
+<td><button class='C02id'>{index}</button></td>
+<td><button class='C02id'>Edit</button></td>
+<td><h1 class='C02id'>{Name}</h1></td>
+</div>
+</>
+ 
+<div class='C02id'>
+<>
+<div key={key}>
+<td><button class='C02id'>{index}</button></td>
+<td><button class='C02id'>Edit</button></td>
+<td><h1 class='C02id'>{Name}</h1></td>
+</div>
+</>
+</div>
+ 
+HTML
+ 
+Column
+ 
+5. R_SearchColumn
+ 
+2. [U]: U_RenameColumn
+ 
+const DeleteColumn = ({Name,setName,setIsRename}) => {
+    function RenameOK(){
+    setName(document.getElementById('NewName').value)
+    setIsRename(false)
+}
+function RenameCancel(){
+    setIsRename(false)
+}
+    return(
+<>
+<div>
+<td><h1 class='Columns'>Rename: {Name} to </h1></td>
+<td><input class='Columns' id='NewName'></input></td>
+<td><button class='Columns' onClick={RenameOK}>OK</button></td>
+<td><button class='Columns' onClick={RenameCancel}>Cancel</button></td>
+</div>
+</>
+    )
+}
+ 
+/*
+ 
+*/
+
+ 
+    display: inline-block;
+ 
+<div id='Body'>
+ 
+</div>
+ 
+<C00_Header/>
+ 
+ColumnLis
+ 
+
+/*////////////////////////////////////////////////////////////////////////////////*/
+ 
+
+/*////////////////////////////////////////////////////////////////////////////////*/
+
+ 
+.C02id_OK {
+    font-size: 17px;
+    border: 1px solid rgb(205, 205, 205, 0);
+    border-left: 5px solid rgb(205, 205, 205, 0);
+    border-right: 5px solid rgb(205, 205, 205, 0);
+}
+
+ 
+/*////////////////////////////////////////////////////////////////////////////////*/
+
+.ColumnName {
+    font-size: 17px;
+    border: 1px solid rgb(205, 205, 205, 0);
+    border-left: 5px solid rgb(205, 205, 205, 0);
+    border-right: 5px solid rgb(205, 205, 205, 0);
+}
+ 
+List
+ 
+<C00_Header/>
+ 
+.FileSaving {
+    display: inline-block;
+    font-size: 20px;
+    padding-right: 10px;
+}
+ 
+SearchColum
+ 
+import { useState } from 'react';
+import './index.css';
+import Column from './component/Column';
+import SearchColumn from './component/ReadColumn';
+import AddNewColumn from './component/CreateColumn';
+
+const ColumnS = () => {
+    const [ColumnList,setColumnList]=useState([{Name: 'Row Index'}]);
+    const ColumnHTMLs = ColumnList.map((Name, index) => <Column index={index+1} key={index+1} Name={Name.Name}/>);
+    // https://react.dev/learn/rendering-lists#keeping-list-items-in-order-with-key
+    // https://youtu.be/XtS14dXwvwE?si=rYQOe_tJbxmSnDWE
+    // https://react.dev/learn/rendering-lists#where-to-get-your-key
+    // https://stackoverflow.com/questions/72217570/insert-counter-in-a-reactjs-map
+    return (
+<>
+<div id='ColumnSPanel'>
+<hr/>
+<AddNewColumn ColumnList={ColumnList} setColumnList={setColumnList}/>
+<hr/>
+<SearchColumn/>
+<hr/>
+{ColumnHTMLs}
+<hr/>
+</div>
+</>
+)
+}
+
+export default ColumnS
+ 
+const R_Column = () => {
+    return (
+<div class='Column'>
+<h1 class='Columns'>Search</h1>
+<input class='Columns'></input>
+<button class='Columns'>OK</button>
+</div>
+)
+}
+
+export default R_Column
+ 
+C01Sub
+ 
+'C' + ParentFolderIndex + 'Sub' + 
+ 
+C03
+ 
+'C' + ParentFolderIndex + 
+ 
+
+<div id='Body'>
+<C00_Header/>
+<C01_Table/>
+</div>
+
+<div id='Body'>
+<C00_Header/>
+<C01_Table/>
+</div>
+ 
+<C00_Header/>
+ 
+ID,Key,Class of the Components = 'C' + ParentFolderIndex + 'id_' + AnyName
+ 
+Component in subcomponents folder = Sub + ['C','R','U','D',None] + '_' + AnyName
+ 
+elete
+ 
+ead
+ 
+reate
+ 
+omponents
+ 
+ + Index(IsNameDuplicate)
+ 
+'const_' + HTMLTags.CapitalLetter() + Index(IsNameDuplicate)
+ 
+
+C01sub_Button
+ 
+    * 
+ 
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 
+        // See '/Users/imac/Desktop/SoloOpenSourceProject/The_Prediction_of_Babel/ToDoNow/v01_d02m11y2023/TablePage.txt'
+ 
+const Row=()=>{
+    return (
+<tr>
+    <td>0</td>
+    <td>Hello             </td>
+    <td>33             </td>
+    <td>Male             </td>
+    <td><button>Delete</button>     </td>
+</tr>
+    )
+}
+
+<button>Filter</button>
+<button>Inspection</button>
+<button>Rename</button>
+<button>Replace</button>
+<button>Plot X</button>
+<button>Plot Y</button>
+<button>Hide</button>
+<button>Delete</button>
+ 
+
+<>
+
+</>
+ 
+<C00_Header/>
+<C01_Table/>
+ 
 Programming Advice
  
