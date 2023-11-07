@@ -1,3 +1,172 @@
+        SortedColumn.reverse();
+ 
+        // by ChatGPT
+ 
+100,...,1,0
+ 
+true
+ 
+        const SortedColumn=[...SS_Column] // Create a copy of the original array
+        SortedColumn.sort((a, b) => b.Name - a.Name);
+        setSS_Reset(Math.random())
+        setSS_Column(SortedColumn)
+ 
+(a, b) => a.Name - b.Name
+ 
+//****************************************************************************
+/*
+
+ */
+ 
+ * Function Overview
+f_Cancel     => Open Default JSX Column
+f_OpenRename => Open Rename JSX Column 
+f_OpenDelete => Open Delete JSX Column 
+
+ 
+function f_ASort(){}
+ 
+let NewName = document.getElementById('C02id_Rename').value 
+ 
+&& SS_Column.map(Column=>Column.Name).includes(NewColumn)===false
+ 
+Sort
+ 
+<td><button </td>
+ 
+<h3>{SS_Filter}</h3>
+ 
+ and unique
+ 
+&& SS_Column.map(Column=>Column.Name).includes(NewColumn)===false
+ 
+            else{setSS_Column([...SS_Column, {Key: NewKey,Name: NewColumn}]);}
+ 
+if(SS_Column.map(Column=>Column.Key).includes(NewKey)===false){
+ 
+let 
+ 
+setSS_Column([...SS_Column, {Key: val,Name: NewColumn}]);
+ 
+            const crypto = require('crypto');
+ 
+        //alert(Key)
+ 
+        {Key:1,Name: '2'},
+        {Key:2,Name: '3'},
+        {Key:3,Name: '4'},
+        {Key:4,Name: '5'},
+ 
+SS_Reset Hook 
+ 
+            alert()
+ 
+SS_Column.map(Column=>Column.Name).includes(NewColumn)
+ 
+SS_Column.includes(NewColumn)
+ 
+===false
+ 
+.toString()
+ 
+SS_Column.includes(NewColumn)
+ 
+onClick={f_Select} id={C02id_CheckButton}
+ 
+<td><button class='C02id' onClick={f_Inspection}>Inspection</button></td>
+ 
+function f_OpenDelete(){setSS_Display(2)}
+ 
+function f_OpenDelete(){setSS_Display(2)}
+ 
+    
+ 
+        
+ 
+    
+ 
+        
+ 
+    
+ 
+        
+ 
+if(Key!==0){
+ 
+    {//<td><button class='C02id'                       >{Key}</button></td>
+    }
+ 
+if(Key!==0)
+        {
+ 
+        alert(list.length)
+ 
+        alert(list.length)
+ 
+alert(list.length)
+ 
+        //alert(JSON.stringify(list))
+        alert(list.length)
+ 
+index+1
+ 
+index+1
+ 
+, index
+ 
+Row Index
+ 
+    //const [SS_FilterColumn,setSS_FilterColumn]=useState(
+    //    SS_Column.filter((Column)=>Column.Name.includes(SS_Filter))
+    //)
+
+    // const chemists = people.filter(person =>
+    //     person.profession === 'chemist'
+    // );
+ 
+SS_Filter={SS_Filter} 
+ 
+    SS_Column,          // SS_Column Hook from ../index.js
+ 
+
+    const chemists = people.filter(person =>
+        person.profession === 'chemist'
+    );
+ 
+    function f_Reset(){
+        setSS_Reset(Math.random());
+    }
+ 
+ setSS_Reset={setSS_Reset}
+ 
+(Math.random())
+ 
+    function f_Reset(){
+        setSS_Reset(Math.random());
+    }
+ 
+    setSS_Reset,
+ 
+ setSS_Reset={setSS_Reset}
+ 
+</div>
+ 
+function f_Reset(){
+            setSeed(Math.random());
+        }
+ 
+ => 
+ 
+
+        //setSS_Column((prevSS_Column) => {
+        //    const updatedSS_Column = prevSS_Column.filter((column, index) => index !== (Key - 1));
+        //    return updatedSS_Column;
+        //});
+ 
+function f_Inspection(){alert('HelloWorld')}
+ 
+alert(JSON.stringify(list))
+ 
 </div>
  
                 
