@@ -1,3 +1,221 @@
+</div>
+ 
+                
+ 
+key={index+1} 
+ 
+  // https://youtu.be/XtS14dXwvwE?si=rYQOe_tJbxmSnDWE
+ 
+<Components/>
+ 
+[...
+ 
+        alert()
+ 
+    const chemists = people.filter(person =>
+        person.profession === 'chemist'
+    );
+ 
+''
+ 
+    const fake_SS_Filter=''
+    const FilteredColumn = SS_Column.filter(Column =>
+        Column.Name.includes(SS_Filter)
+    );
+ 
+fake_
+ 
+
+<div class='C02id'>
+<h1 class='C02id'>Add New Column:</h1>
+<input class='C02id' id='C02id_CreateNewColumn'></input>
+<button class='C02id' onClick={f_CreateColumn}>OK</button>
+</div>
+
+ 
+
+<div class='C02id'>
+<h1 class='C02id'>Add New Column:</h1>
+<input class='C02id' id='C02id_CreateNewColumn'></input>
+<button class='C02id' onClick={f_CreateColumn}>OK</button>
+ 
+        colsole.log('SS_Column')
+        colsole.log(SS_Column)
+        colsole.log('SS_Filter')
+        colsole.log(SS_Filter)
+ 
+event
+ 
+ = 
+ 
+ => 
+ 
+onChange={}
+ 
+f_Search
+ 
+fake_
+ 
+        const filtered = SS_Column.filter(user => user.name.includes(value));
+ 
+    //const fake_ColumnFilter='A'
+    const FilteredColumn = SS_Column.filter(Column =>
+      // https://react.dev/learn/rendering-lists#filtering-arrays-of-items
+      Column.Name.includes(SS_ColumnFilter)
+    );
+ 
+        //let Filter=document.getElementById('C02id_SearchColumnName').value;
+        const Value = event.target.value;
+        const Filter = SS_Column.filter(Column => Column.Name.include(Value))
+        setSS_ColumnFilter(Filter)
+ 
+        const filtered = users.filter(user => user.name.includes(value));
+ 
+        alert(Filter)
+ 
+<button class='C02id' onClick={f_Search}>OK</button>
+ 
+//****************************************************************************
+
+ 
+// Code
+
+// 1. Hook
+// 2. Function
+// 3. Utility
+ 
+// Output
+ 
+                                        
+ 
+    //
+ 
+Hello
+ 
+<h1>{SS_ColumnFilter}</h1>
+ 
+Column
+ 
+Column
+ 
+Column
+ 
+Column
+ 
+_Column
+ 
+        // * [R]: Import Column
+ 
+        // 
+ 
+        // * [R]: Visualization
+ 
+        // 1. Filter Setting
+        // 2. Visualization Setting
+ 
+<td><button class='C02id' onClick={f_OpenRename}>{ Key}</button></td>
+ 
+    alert( Key)
+ 
+    key,
+ 
+fake
+ 
+                fake_index={index+1} 
+ 
+ key={key}
+ 
+ key={key}
+ 
+ key={key}
+ 
+key
+ 
+key
+ 
+key
+ 
+    key,
+ 
+index+
+ 
+<td><button class='C02id' onClick={f_OpenRename}>{key}</button></td>
+ 
+<td><h1 class='C02id'>{key}</h1></td>
+ 
+.toString()
+ 
+/
+ 
+        alert(NewName.toString())
+ 
+Name
+ 
+Name
+ 
+    const [SS_ColumnName]
+ 
+        ColumnName = NewName
+ 
+    // SS_Column == 0 => Default JSX Column
+    // SS_Column == 1 => Rename JSX Column
+    // SS_Column == 2 => Delete JSX Column
+ 
+        alert('Rename')
+ 
+function f_Cancel(){
+        setSS_Column(0)
+    }
+ 
+Rename
+ 
+Rename
+ 
+Rename
+ 
+Rename
+ 
+<><h1>Escape</h1></>
+ 
+<td><h1 class='C02id'>{ColumnName} to </h1></td>
+ 
+<td><h1 class='C02id'>{ColumnName} to </h1></td>
+ 
+Rename from 
+ 
+</h1><h1>
+ 
+</h1><h1 class='C02id'>
+ 
+function f_Select(){
+ 
+the previous name to 
+ 
+<h1 class='C02id'>{ColumnName}</h1>
+ 
+<button class='C02id' onClick={f_Rename}>Edit</button>
+ 
+<button class='C02id' onClick={f_Select} id='C02id_CheckButton'>X</button>
+ 
+
+
+//****************************************************************************
+ 
+function 
+ 
+// Create New Column
+ 
+<button onClick={text}>sss</button>
+ 
+    function text(){
+        alert(SSColumn.toString())
+    }
+ 
+    // 3. 
+ 
+        //alert(NewColumn)
+        //alert(SSColumnName)
+ 
     // const [SSColumnName,setSSColumnName]=useState(ColumnName)
  
 //****************************************************************************

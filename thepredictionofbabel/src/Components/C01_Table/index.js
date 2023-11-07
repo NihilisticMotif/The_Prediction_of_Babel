@@ -8,7 +8,6 @@ const C01_Table = () => {
         {Name:'Tata'  , Gender: true, Age: 19}
     ]
 
-
     const ColumnHTML = ColumnList.map(Column => <th>{Column.Name+','+Column.Gender.toString()+','+Column.Age.toString()}</th>);
     const ColumnButton = ColumnList.map(Column=>
         <td>

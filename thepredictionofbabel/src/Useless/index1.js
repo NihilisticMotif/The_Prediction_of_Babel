@@ -2,7 +2,7 @@ import { useState } from "react";
 import './index.css'
 
 function CRUDList() {
-  // https://youtu.be/XtS14dXwvwE?si=rYQOe_tJbxmSnDWE
+  // https://youtu.be/XtS14dXwvwE?si=pf_LrsrCU86HsVrg
 
   const [serviceList, setServiceList] = useState([{ service: "" }]);
 

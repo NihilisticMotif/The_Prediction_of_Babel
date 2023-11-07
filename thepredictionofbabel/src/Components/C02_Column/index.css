@@ -5,11 +5,11 @@
     color: rgb(0, 0, 0);
     padding: 10px;
     display: block;
-    width: 700px
+    width: 800px
 }
 
 .C02id {
-    font-size: 17px;
+    font-size: 15px;
     border: 1px solid rgb(205, 205, 205, 0);
     border-left: 5px solid rgb(205, 205, 205, 0);
     border-right: 5px solid rgb(205, 205, 205, 0);
