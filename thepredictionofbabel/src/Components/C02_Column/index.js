@@ -14,26 +14,53 @@ const C02_Column = (
 
     // SS_Column = Set State Column 
     // Property of Column
-    // 0. Key
+    // 0. Key        
     // 1. ColumnName
-    // 2. IsSelect
+    // 2. IsViewC01     // Is the Column display in C01_Table
+    // 3. IsViewC02     // Is the Column display in C02_Column
     const [SS_Column,setSS_Column]=useState([
-        {Key:0,Name: 'Row Index'},
+        {Key:0,Name: 'Row Index'            , IsViewC01: false, IsViewC02: true},
+        {Key:1,Name: 'Weezer'               , IsViewC01: false, IsViewC02: true},
+        {Key:2,Name: 'Tally Hall'           , IsViewC01: false, IsViewC02: true},
+        {Key:3,Name: 'Que, The Human Editor', IsViewC01: false, IsViewC02: true},
+        {Key:4,Name: 'Human Centipy'        , IsViewC01: false, IsViewC02: true},
         ]);
-
+    const [SS_NewColumn,setSS_NewColumn]=useState(0)
     const [SS_Filter,setSS_Filter]=useState('');
+    let let_Column=[...SS_Column]
+    for(let i=0;i<let_Column.length;i++){
+        if(let_Column[i].Name.includes(SS_Filter)===true || i<SS_NewColumn){
+            let_Column[i].IsViewC02=true
+        }else{let_Column[i].IsViewC02=false}
+    }
+    // Filter Every Column except Searched Column and New Column
+    let FilterColumn = SS_Column.filter(Column=>
+        Column.IsViewC02===true
+        // https://react.dev/learn/rendering-lists
+    );
+    /*
+    for(let i=0;i<SS_Column.length;i++){
+        if(i<SS_NewColumn || SS_Column[i].Name.includes(SS_Filter)){
+            FilterColumn.push(SS_Column[i])
+        }
+    }
     let FilterColumn = SS_Column.filter(Column=>
         Column.Name.includes(SS_Filter)
         // https://react.dev/learn/rendering-lists
     );
+    */
 
     const JSX_Column = FilterColumn.map(
         (Column,index) => 
             <div key={Column.Key}>
             <C_DefineColumn
+                // Property
                 Index={index+1}
                 Key={Column.Key} 
                 ColumnName={Column.Name}
+                IsViewC01={Column.IsViewC01}
+                IsViewC02={Column.IsViewC02}
+                // Set State Hook
                 SS_Column={FilterColumn}
                 setSS_Column={setSS_Column}
                 setSS_Reset={setSS_Reset}
@@ -53,6 +80,8 @@ const C02_Column = (
 <C_CreateColumn 
     SS_Column={SS_Column} 
     setSS_Column={setSS_Column}
+    SS_NewColumn={SS_NewColumn}
+    setSS_NewColumn={setSS_NewColumn}
 />
 <hr/>
 <R_SearchColumn 
@@ -60,10 +89,15 @@ const C02_Column = (
     setSS_Reset={setSS_Reset}
     SS_Column={SS_Column}
     setSS_Column={setSS_Column}
+    setSS_NewColumn={setSS_NewColumn}
+
 />
 <hr/>
 
 <div key={SS_Reset}>
+{
+//SS_Reset only reset {JSX_Column}
+}
 {JSX_Column}
 </div>
 

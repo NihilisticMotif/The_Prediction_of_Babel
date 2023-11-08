@@ -1,3 +1,147 @@
+set
+ 
+set
+ 
+let_SS_Column.map(Column=>
+ 
+                IsViewC01={Column.IsViewC01}
+                IsViewC02={Column.IsViewC02}
+ 
+IsSetect         // Is it display in Table?
+ 
+// Must be unique
+ 
+    let FilterColumn=[]
+ 
+    SS_NewColumn,    // from ../index.js, Filter New Column
+    setSS_NewColumn  // from ../index.js, Filter New Column
+ 
+            let let_SS_NewColumn=SS_NewColumn
+            setSS_NewColumn(let_SS_NewColumn+1)
+ 
+        setSS_NewColumn(0)
+ 
+        setSS_NewColumn(0)
+ 
+    setSS_NewColumn // from ../index.js, Reset SS_NewColumn after click the button
+ 
+        setSS_NewColumn(0)
+ 
+    SS_NewColumn={SS_NewColumn}
+    setSS_NewColumn={setSS_NewColumn}
+ 
+    setSS_NewColumn={setSS_NewColumn}
+ 
+    const [SS_NewColumn, setSS_NewColumn] = useState(0)
+ 
+.map(Column=>Column.Name)
+ 
+        else{
+            if(SS_Column.map(Column=>Column.Name).includes(SS_Filter)){
+                FilterColumn.push(SS_Column[i])
+            }
+        }
+ 
+    SS_Column={SS_Column}
+ 
+let JSX_SelectButton
+ 
+const C02id_CheckButton = 'C02id_CheckButton'+Key.toString()
+ 
+const C02id_CheckButton = 'C02id_CheckButton'+Key.toString()
+ 
+let JSX_SelectButton
+    const C02id_CheckButton = 'C02id_CheckButton'+Key.toString()
+ 
+// IsSelect is used for Select only some Column in the Table
+ 
+    
+    // ID of State Button that represent if the Column is selected or not.
+ 
+const C02id_CheckButton = 'C02id_CheckButton'+Key.toString()
+ 
+    // ID of State Button that represent if the Column is selected or not.
+ 
+// https://react.dev/learn/responding-to-events#preventing-default-behavior
+    // https://www.w3schools.com/jsref/met_document_getelementbyid.asp
+ 
+    
+ 
+        
+ 
+    
+ 
+        
+ 
+        document.getElementById(C02id_CheckButton).style.backgroundColor = 'rgb(255,255,255)'
+ 
+        document.getElementById(C02id_CheckButton).style.backgroundColor = 'red'
+ 
+<td><button class='C02id' onClick={f_Select} id={C02id_CheckButton} style={{backgroundColor: "blue"}}>X</button></td>
+ 
+        // https://www.w3schools.com/jsref/jsref_sort.asp
+        // https://stackoverflow.com/questions/11182924/how-to-check-if-javascript-object-is-json
+ 
+            let let_Select=SS_IsSelect
+ 
+SS_IsSetect
+ 
+SS_
+ 
+        // SS_ColumnName = Name of this Column
+ 
+
+    const [SS_ColumnName,setSS_ColumnName] = useState(ColumnName)
+ 
+SS_
+ 
+    const [SS_ColumnName,setSS_ColumnName] = useState(ColumnName)
+ 
+            //setSS_ColumnName(NewName)
+            //setSS_Display(0)
+ 
+);//
+ 
+            alert(NewName)
+ 
+            let Name = document.getElementById('C02id_Rename').value 
+ 
+        alert(NewName)
+        /*
+ 
+New
+ 
+New
+ 
+        Column.reverse();
+ 
+{Key: NewKey,Name: NewColumn}
+ 
+            /* next line works with strings and numbers, 
+             * and you may want to customize it to your needs
+             */
+ 
+        //for (let i = 0; i < SortedName.length; i++) {
+        //    alert(SortedName[i])
+        //}
+ 
+        
+        //alert(SS_Column.constructor)
+ 
+let SortedName=SS_Column.map(Column=>Column.Name) // Create a copy of the original array
+ 
+let SortedName=SS_Column.map(Column=>Column.Name) // Create a copy of the original array
+ 
+Sorted
+ 
+        SortedName.sort();
+ 
+People.sort(dynamicSort("Name"));
+ 
+        for (let i=0;i<SS_Column.length;i++){
+            alert(SS_Column[i].constructor)
+        }
+ 
         SortedColumn.reverse();
  
         // by ChatGPT

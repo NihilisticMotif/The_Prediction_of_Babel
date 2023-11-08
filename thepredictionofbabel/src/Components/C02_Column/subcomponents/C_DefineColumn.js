@@ -4,68 +4,80 @@ import { useState } from 'react';
 const C_DefineColumn = (
 //****************************************************************************
 {
+    // Property
     Index,           // Position of each column
     Key,             // For some unknown reason, name key, result key = unidentify
     ColumnName,      // Name of this Column
+    IsViewC01,        // Is it display in C01_Table?
+    IsViewC02,        // Is it display in C02_Column?
+    // Set State Hook
     SS_Column,       // from ../index.js, List of all Columns, use with: f_Delete
     setSS_Column,    // from ../index.js, List of all Columns, use with: f_Delete
-    setSS_Reset      // from ../index.js, Reset Column Key and Index after f_Delete and Filter
+    setSS_Reset,     // from ../index.js, Reset Column Key and Index after f_Delete and Filter
     // https://stackoverflow.com/questions/56649094/how-to-reload-a-component-part-of-page-in-reactjs
 }) => 
 {
 //****************************************************************************
 
-    const [SS_ColumnName,setSS_ColumnName] = useState(ColumnName)
-    
-    // SS_ColumnName = Name of this Column
     const [SS_Display,setSS_Display]= useState(0)
     // SS_Display == 0 => Default JSX Column | f_Cancel     => setSS_Display(0) => Open Default JSX Column
     // SS_Display == 1 => Rename JSX Column  | f_OpenRename => setSS_Display(1) => Open Rename JSX Column 
     // SS_Display == 2 => Delete JSX Column  | f_OpenDelete => setSS_Display(2) => Open Delete JSX Column 
 
-    const [SS_IsSelect,setSS_IsSelect]= useState(false)
-    // IsSelect is used for Select only some Column in the Table
+    // IsViewC01 is used for Select only some Columns in the Table
+    const [SS_IsViewC01,setSS_IsViewC01]= useState(IsViewC01)
+    let JSX_SelectButton
     const C02id_CheckButton = 'C02id_CheckButton'+Key.toString()
-    // ID of State Button that represent if the Column is selected or not.
-
     function f_Select(){
-    if (SS_IsSelect){
-        document.getElementById(C02id_CheckButton).style.backgroundColor = 'rgb(255,255,255)'
-        setSS_IsSelect(false)
+        // https://react.dev/learn/responding-to-events#preventing-default-behavior
+        // https://www.w3schools.com/jsref/met_document_getelementbyid.asp
+        if (SS_IsViewC01===true){
+            document.getElementById(C02id_CheckButton).style.backgroundColor = "red";
+            setSS_IsViewC01(false)
+        }
+        else if (SS_IsViewC01===false){
+            document.getElementById(C02id_CheckButton).style.backgroundColor = "white";
+            setSS_IsViewC01(true)}
     }
-    else if (SS_IsSelect===false){
-        document.getElementById(C02id_CheckButton).style.backgroundColor = 'red'
-        setSS_IsSelect(true)
+    if(SS_IsViewC01===true){
+        JSX_SelectButton=<td><button class='C02id' onClick={f_Select} id={C02id_CheckButton} style={{backgroundColor: "red"}}>{SS_IsViewC01.toString()}</button></td>
     }
-    // https://react.dev/learn/responding-to-events#preventing-default-behavior
-    // https://www.w3schools.com/jsref/met_document_getelementbyid.asp
+    else{
+        JSX_SelectButton=<td><button class='C02id' onClick={f_Select} id={C02id_CheckButton} style={{backgroundColor: "white"}}>{SS_IsViewC01.toString()}</button></td>
     }
 
     function f_Cancel(){setSS_Display(0)}
 
     function f_OpenRename(){setSS_Display(1)}
     function f_Rename(){
-        let NewName = document.getElementById('C02id_Rename').value 
+        let let_Name = document.getElementById('C02id_Rename').value 
         // Check if the name is duplicate
-        if(SS_Column.map(Column=>Column.Name).includes(NewName)===false){
-            setSS_ColumnName(NewName)
-            setSS_Display(0)
+        if(SS_Column.map(Column=>Column.Name).includes(let_Name)===false){
+            let let_Column = [...SS_Column];
+            let_Column.splice(Index-1, 1,{
+                Key: Key,
+                Name: let_Name, 
+                IsViewC01: SS_IsViewC01,
+                IsViewC02: true
+            });
+            setSS_Reset(Math.random())
+            setSS_Column(let_Column);
         }
     }
 
     function f_OpenDelete(){setSS_Display(2)}
     function f_Delete(){
         // https://youtu.be/XtS14dXwvwE?si=rYQOe_tJbxmSnDWE
-        let list = [...SS_Column];
-        list.splice(Index-1, 1);
+        let let_Column = [...SS_Column];
+        let_Column.splice(Index-1, 1);
         setSS_Reset(Math.random())
-        setSS_Column(list);
+        setSS_Column(let_Column);
     }
 
     function f_OpenSetting(){
-        let list = [...SS_Column];
+        let let_Column = [...SS_Column];
         //alert(JSON.stringify(list))
-        alert(list.length)
+        alert(let_Column.length)
         // https://stackoverflow.com/questions/5612787/converting-an-object-to-a-string
 
         // * [C]: Create Copy Column
@@ -89,7 +101,7 @@ const C_DefineColumn = (
         JSX_Column=
 <>
 <div>
-<td><button class='C02id' onClick={f_Select} id={C02id_CheckButton}>X</button></td>
+{JSX_SelectButton}
 <td><button class='C02id' >Index = {Index}</button></td>
 <td><button class='C02id' >Key = {Key}</button></td>
 <td><button class='C02id' onClick={f_OpenRename}>Rename</button></td>
@@ -99,7 +111,7 @@ const C_DefineColumn = (
     }
     {//<td><button class='C02id' onClick={f_Inspection}>Name</button></td>
     }
-<td><h1 class='C02id'>{SS_ColumnName}</h1></td>
+<td><h1 class='C02id'>{ColumnName}</h1></td>
 </div>
 </>
     // Rename Column JSX
@@ -117,7 +129,7 @@ const C_DefineColumn = (
         JSX_Column=
 <>
 <div>
-<td><h1 class='C02id'>Do you sure that you want to delete {SS_ColumnName}</h1></td>
+<td><h1 class='C02id'>Do you sure that you want to delete {ColumnName}</h1></td>
 <td><button class='C02id' onClick={f_Delete}>OK</button></td>
 <td><button class='C02id' onClick={f_Cancel}>Cancel</button></td>
 </div>
