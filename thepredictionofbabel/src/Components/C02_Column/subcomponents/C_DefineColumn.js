@@ -72,31 +72,29 @@ const C_DefineColumn = (
         let let_Name = document.getElementById(C02id_Rename).value 
         // Check if the name is duplicate
         if(SS_Column.map(Column=>Column.Name).includes(let_Name)===false){
-            let let_Column = [...SS_Column];
-            let let_NewColumn = [...SS_FilterColumn];
-            // SS_FilterColumn
-            alert(Index-1)
-            let_Column.splice(Index-1, 1,{
+            let ss_Column = [...SS_Column];
+            // https://react.dev/learn/updating-arrays-in-state#updating-arrays-without-mutation
+            // use slice instead of splice because the state should not be mutated.
+            ss_Column.slice(Index-1, 1,{
                 Key: Key,
                 Name: let_Name, 
                 IsSelect: SS_IsSelect,
-                VisibleIndex: true
+                VisibleIndex: VisibleIndex
             });
-            let_NewColumn.push(Key);
             setSS_Reset(Math.random())
-            const UniqueNewColumn = [...new Set(let_NewColumn)];
+            //const UniqueNewColumn = [...new Set(let_NewColumn)];
             // https://stackoverflow.com/questions/11688692/how-to-create-a-list-of-unique-items-in-javascript
-            setSS_FilterColumn(UniqueNewColumn);
-            setSS_Column(let_Column);
+            //setSS_FilterColumn(UniqueNewColumn);
+            setSS_Column(ss_Column);
         }
     }
     function f_OpenDelete(){setSS_Display(2)}
     function f_Delete(){
         // https://youtu.be/XtS14dXwvwE?si=rYQOe_tJbxmSnDWE
-        let let_Column = [...SS_Column];
-        let_Column.splice(Index-1, 1);
+        let ss_Column = [...SS_Column];
+        ss_Column.splice(Index-1, 1);
         setSS_Reset(Math.random())
-        setSS_Column(let_Column);
+        setSS_Column(ss_Column);
     }
     // JSX = representing in JSX
     let JSX_Column
@@ -141,9 +139,9 @@ const C_DefineColumn = (
 // FUNCTION_02: Utility, Will Develop Later
 //****************************************************************************
     function f_OpenSetting(){
-        let let_Column = [...SS_Column];
+        let ss_Column = [...SS_Column];
         //alert(JSON.stringify(list))
-        alert(let_Column.length)
+        alert(ss_Column.length)
         // https://stackoverflow.com/questions/5612787/converting-an-object-to-a-string
 
         // * [C]: Create Copy Column

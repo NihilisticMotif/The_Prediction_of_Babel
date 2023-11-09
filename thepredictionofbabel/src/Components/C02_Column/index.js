@@ -23,11 +23,11 @@ const C02_Column = (
     // 2. IsSelect     // Is the Column display in C01_Table
     // 3. VisibleIndex     // Is the Column display in C02_Column
     const [SS_Column,setSS_Column]=useState([
-        {Key: 0, Name: 'Row Index'            , IsSelect: false, VisibleIndex: true},
-        {Key: 1, Name: 'Weezer'               , IsSelect: false, VisibleIndex: true},
-        {Key: 2, Name: 'Tally Hall'           , IsSelect: false, VisibleIndex: true},
-        {Key: 3, Name: 'Que, The Human Editor', IsSelect: false, VisibleIndex: true},
-        {Key: 4, Name: 'Human Centipede'      , IsSelect: false, VisibleIndex: true},
+        {Key: 0, Name: 'Row Index'            , IsSelect: false, VisibleIndex: 0},
+        {Key: 1, Name: 'Weezer'               , IsSelect: false, VisibleIndex: 1},
+        {Key: 2, Name: 'Tally Hall'           , IsSelect: false, VisibleIndex: 2},
+        {Key: 3, Name: 'Que, The Human Editor', IsSelect: false, VisibleIndex: 3},
+        {Key: 4, Name: 'Human Centipede'      , IsSelect: false, VisibleIndex: 4},
         ]);
     
     // Every columns that satisfy 1 of 3 conditions, will appear in C02_Column
@@ -39,33 +39,35 @@ const C02_Column = (
     const [SS_Filter,setSS_Filter]=useState('');
 
     // SS_FilterColumn is the list of visible column
-    const [SS_FilterColumn,setSS_FilterColumn]=useState()
+    const [SS_FilterColumn,setSS_FilterColumn]=useState([])
 
 //****************************************************************************
 // JSX_00: Filter SS_Column.Name by VisibleIndex=true
 //****************************************************************************
-    let let_Column=SS_Column
-    let let_NewColumn=SS_FilterColumn
+    let ss_Column=[...SS_Column]
+    //let ss_NewColumn=[...SS_FilterColumn]
     // Filter Every Column except Filtered Column and New Column
-    for(let i=0;i<let_Column.length;i++){
-        if(let_Column[i].Name.includes(SS_Filter)===true){
+    let let_VisibleIndex=0
+    for(let i=0;i<ss_Column.length;i++){
+        if(ss_Column[i].Name.includes(SS_Filter)===true){
             // select the column with match name
-            let_Column[i].VisibleIndex=true
+            ss_Column[i].VisibleIndex=let_VisibleIndex
+            let_VisibleIndex+=1
         }
-        else{let_Column[i].VisibleIndex=undefined}
+        else{ss_Column[i].VisibleIndex=undefined}
     }
 
-    let let_FilterColumn = (SS_Column.filter(Column=>
-        Column.VisibleIndex===true
+    let ss_FilterColumn = (SS_Column.filter(Column=>
+        Column.VisibleIndex!==undefined
         // https://react.dev/learn/rendering-lists
     ));
     
     useEffect(() => {
-    //setSS_FilterColumn(let_FilterColumn)
-    //alert(let_FilterColumn)
+    setSS_FilterColumn(ss_FilterColumn.map((Column)=>Column.Name))
+    //alert(ss_FilterColumn)
     }, []);
 
-    let JSX_Column = let_FilterColumn.map(
+    let JSX_Column = ss_FilterColumn.map(
         (Column,index) => 
             <div key={Column.Key}>
             <C_DefineColumn
@@ -90,20 +92,33 @@ const C02_Column = (
     // https://stackoverflow.com/questions/72217570/insert-counter-in-a-reactjs-map
 
 //****************************************************************************
+// JSX_01: Indicate the structure of SS_FilterColumn and SS_Column
+//****************************************************************************
+    const Indicator = <>
+<h3>SS_Column: {SS_Column.length}</h3>
+<h3>SS_FilterColumn Type: {
+    JSON.stringify(SS_FilterColumn)
+    // https://stackoverflow.com/questions/5612787/converting-an-object-to-a-string
+}</h3>
+<h3>ss_FilterColumn: {
+    SS_FilterColumn.constructor.toString()
+    // https://stackoverflow.com/questions/11182924/how-to-check-if-javascript-object-is-json
+}</h3>
+<hr/>
+</>
+//****************************************************************************
 // OUTPUT
 //****************************************************************************
     return (
 <>
 <div id='C02id_Div'>
-<h3>SS_Column: {SS_Column.length}</h3>
-<h3>SS_FilterColumn: {SS_FilterColumn}</h3>
-<hr/>
+{Indicator}
 {
 // Create New Column in Column List
 }
 <C_CreateColumn 
-    SS_FilterColumn={SS_FilterColumn}
-    setSS_FilterColumn={setSS_FilterColumn}
+    //SS_FilterColumn={SS_FilterColumn}
+    //setSS_FilterColumn={setSS_FilterColumn}
     SS_Column={SS_Column} 
     setSS_Column={setSS_Column}
 />
@@ -114,7 +129,7 @@ const C02_Column = (
 <R_FilterColumn 
     setSS_Filter={setSS_Filter} 
     setSS_Reset={setSS_Reset}
-    setSS_FilterColumn={setSS_FilterColumn}
+    //setSS_FilterColumn={setSS_FilterColumn}
     SS_Column={SS_Column}
     setSS_Column={setSS_Column}
 />

@@ -5,8 +5,8 @@ const C_CreateColumn = (
 //****************************************************************************
 {
     // HOOK: setState()
-    SS_FilterColumn,    // from ../index.js, Allow New Column to appear
-    setSS_FilterColumn, // from ../index.js, Allow New Column to appear
+    //SS_FilterColumn,    // from ../index.js, Allow New Column to appear
+    //setSS_FilterColumn, // from ../index.js, Allow New Column to appear
     SS_Column,       // from ../index.js, Update Columns
     setSS_Column,    // from ../index.js, Update Columns
 }) => 
@@ -27,9 +27,9 @@ const C_CreateColumn = (
             while(SS_Column.map(Column=>Column.Key).includes(NewKey)===true){
                 NewKey = Math.random()
             }
-            let SS_FilterColumn = SS_FilterColumn
-            setSS_FilterColumn([NewKey,...SS_FilterColumn])
-            let ss_Column = SS_Column
+            //let ss_FilterColumn = [...SS_FilterColumn]
+            //setSS_FilterColumn([NewKey,...ss_FilterColumn])
+            let ss_Column = [...SS_Column]
             setSS_Column([{
                 Key: NewKey,    // Property of the column 
                 Name: NewColumn, 

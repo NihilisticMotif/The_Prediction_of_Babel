@@ -1,3 +1,60 @@
+let ss_FilterColumn = [...SS_FilterColumn];
+ 
+            //ss_NewColumn.push(Key);
+ 
+            // SS_FilterColumn
+            alert(Index-1)
+ 
+<>
+<h3>SS_Column: {SS_Column.length}</h3>
+<h3>SS_FilterColumn: {
+    JSON.stringify(SS_FilterColumn)
+    // https://stackoverflow.com/questions/5612787/converting-an-object-to-a-string
+}</h3>
+<h3>ss_FilterColumn: {
+    SS_FilterColumn.constructor.toString()
+    // https://stackoverflow.com/questions/11182924/how-to-check-if-javascript-object-is-json
+}</h3>
+<hr/>
+</>
+ 
+</>
+ 
+[...
+ 
+{Name:'Name'},{Name:'CheChe'}
+ 
+ss_FilterColumn
+ 
+.map((Column)=>{Name:Column.Name})
+ 
+,...let_FilterColumn
+ 
+ss_FilterColumn.map((Column) => ({Key: Column.Key, Name: Column.Name, IsSelect: Column.IsSelect, VisibleIndex: Column.VisibleIndex})))
+ 
+'Row Index'            
+ 
+JSON.stringify(
+ 
+{Key: 4, Name: 'Human Centipede'      , IsSelect: false, VisibleIndex: true},
+ 
+        // reverse
+ 
+    function f_ASort(){
+        // 0,1,...,100
+        let ss_Column = [...SS_Column]
+        ss_Column.sort(f_Sort("Name"));
+        setSS_FilterColumn([])
+        setSS_Reset(Math.random())
+        setSS_Column(ss_Column)
+    }
+ 
+        
+ 
+JSON.stringify(
+ 
+[...
+ 
         else if(let_NewColumn.includes(let_Column[i].Key)===true){
             // select the column with match key
             let_Column[i].VisibleIndex=true

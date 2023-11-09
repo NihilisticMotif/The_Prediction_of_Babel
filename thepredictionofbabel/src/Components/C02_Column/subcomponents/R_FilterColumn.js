@@ -6,7 +6,7 @@ const R_FilterColumn = (
     // HOOK: setState()
     setSS_Reset,    // from ../index.js, Reset After update activate setSS_Filter
     setSS_Filter,   // from ../index.js, Filter Column that match with SS_Filter
-    setSS_FilterColumn,// from ../index.js, Reset SS_FilterColumn as []
+    //setSS_FilterColumn,// from ../index.js, Reset SS_FilterColumn as []
     SS_Column,      // from ../index.js, Sort Column
     setSS_Column,   // from ../index.js, Sort Column
 }) => {
@@ -17,7 +17,7 @@ const R_FilterColumn = (
         //const Value=event.target.value;
         let let_Input = document.getElementById('C02id_FilterColumnName').value
         setSS_Filter(let_Input)
-        setSS_FilterColumn([])
+        //setSS_FilterColumn([])
         setSS_Reset(Math.random())
     }
 //****************************************************************************
@@ -25,35 +25,26 @@ const R_FilterColumn = (
 //****************************************************************************
     function f_Sort(property) {
         // https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
-        let sortOrder = 1;
+        let let_SortOrder = 1;
         if(property[0] === "-") {
-            sortOrder = -1;
+            let_SortOrder = -1;
             property = property.substr(1);
         }
         return function (a,b) {
-            let result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
-            return result * sortOrder;
+            let let_Result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+            return let_Result * let_SortOrder;
         }
     }
-    function f_DSort(){
+    function f_DSort(IsD){
         // 100,...,1,0
-        // reverse
-        let let_Column = [...SS_Column]
-        let_Column.sort(f_Sort("Name"));
-        let_Column.reverse();
+        let ss_Column = [...SS_Column]
+        ss_Column.sort(f_Sort("Name"));
+        if(IsD===true){ss_Column.reverse();}
         // https://www.w3schools.com/jsref/jsref_sort.asp
         // https://stackoverflow.com/questions/11182924/how-to-check-if-javascript-object-is-json
-        setSS_FilterColumn([])
+        //setSS_FilterColumn([])
         setSS_Reset(Math.random())
-        setSS_Column(let_Column)
-    }
-    function f_ASort(){
-        // 0,1,...,100
-        let let_Column = [...SS_Column]
-        let_Column.sort(f_Sort("Name"));
-        setSS_FilterColumn([])
-        setSS_Reset(Math.random())
-        setSS_Column(let_Column)
+        setSS_Column(ss_Column)
     }
 //****************************************************************************
 // OUTPUT
@@ -63,8 +54,8 @@ const R_FilterColumn = (
 <h1 class='C02id'>Search:</h1>
 <input class='C02id' id='C02id_FilterColumnName'></input>
 <td><button class='C02id' onClick={f_Filter}>OK</button></td>
-<td><button class='C02id' onClick={f_DSort}>Descending Sort</button></td>
-<td><button class='C02id' onClick={f_ASort}>Ascending Sort</button></td>
+<td><button class='C02id' onClick={()=>f_DSort(true)}>Descending Sort</button></td>
+<td><button class='C02id' onClick={()=>f_DSort(false)}>Ascending Sort</button></td>
 </div>
 )
 }
