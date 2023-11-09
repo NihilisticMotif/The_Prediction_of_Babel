@@ -1,21 +1,28 @@
-const R_SearchColumn = (
+const R_FilterColumn = (
+//****************************************************************************
+// INPUT
 //****************************************************************************
 {
+    // HOOK: setState()
     setSS_Reset,    // from ../index.js, Reset After update activate setSS_Filter
-    setSS_Filter,   // from ../index.js, Filter (Search) Column
+    setSS_Filter,   // from ../index.js, Filter Column that match with SS_Filter
+    setSS_FilterColumn,// from ../index.js, Reset SS_FilterColumn as []
     SS_Column,      // from ../index.js, Sort Column
     setSS_Column,   // from ../index.js, Sort Column
-    setSS_NewColumn // from ../index.js, Never allow
 }) => {
 //****************************************************************************
-    function f_Search(){
+// FUNCTION_00: Update SS_Filter, so that index.js update the new filter word.
+//****************************************************************************
+    function f_Filter(){
         //const Value=event.target.value;
-        let let_Input = document.getElementById('C02id_SearchColumnName').value
+        let let_Input = document.getElementById('C02id_FilterColumnName').value
         setSS_Filter(let_Input)
-        setSS_NewColumn(0)
+        setSS_FilterColumn([])
         setSS_Reset(Math.random())
     }
-    
+//****************************************************************************
+// FUNCTION_01: Sort SS_Column
+//****************************************************************************
     function f_Sort(property) {
         // https://stackoverflow.com/questions/1129216/sort-array-of-objects-by-string-property-value
         let sortOrder = 1;
@@ -36,7 +43,7 @@ const R_SearchColumn = (
         let_Column.reverse();
         // https://www.w3schools.com/jsref/jsref_sort.asp
         // https://stackoverflow.com/questions/11182924/how-to-check-if-javascript-object-is-json
-        setSS_NewColumn(0)
+        setSS_FilterColumn([])
         setSS_Reset(Math.random())
         setSS_Column(let_Column)
     }
@@ -44,20 +51,22 @@ const R_SearchColumn = (
         // 0,1,...,100
         let let_Column = [...SS_Column]
         let_Column.sort(f_Sort("Name"));
-        setSS_NewColumn(0)
+        setSS_FilterColumn([])
         setSS_Reset(Math.random())
         setSS_Column(let_Column)
     }
 //****************************************************************************
+// OUTPUT
+//****************************************************************************
     return (
 <div class='C02id'>
 <h1 class='C02id'>Search:</h1>
-<input class='C02id' id='C02id_SearchColumnName'></input>
-<td><button class='C02id' onClick={f_Search}>OK</button></td>
+<input class='C02id' id='C02id_FilterColumnName'></input>
+<td><button class='C02id' onClick={f_Filter}>OK</button></td>
 <td><button class='C02id' onClick={f_DSort}>Descending Sort</button></td>
 <td><button class='C02id' onClick={f_ASort}>Ascending Sort</button></td>
 </div>
 )
 }
 //****************************************************************************
-export default R_SearchColumn
+export default R_FilterColumn

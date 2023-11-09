@@ -12,3 +12,16 @@ Extrovert Column
 3. [U]: Transform Column
 4. [U]: Replace Data
 5. [R]: Visualization
+
+File.js 
+ * INPUT
+ * HOOK 
+ * FUNCTION_00: Function Comment No. 00
+ * ...
+ * FUNCTION_N: Comment No. N
+ * JSX_00: Comment No. 00
+ * ...
+ * JSX_N: Comment No. N
+ * OUTPUT
+
+Note: By default FUNCTION and VARIABLE are group together as FUNCTION
