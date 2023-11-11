@@ -28,15 +28,14 @@ const C_CreateColumn = (
             while(SS_Column.map(Column=>Column.Key).includes(let_NewKey)===true){
                 let_NewKey = Math.random()
             }
-
             // Add New Column in List of All Column
             let ss_Column = [...SS_Column]
             setSS_Column([{
-                Key: let_NewKey,    // Property of the column 
+                // Property of the New Column 
+                Key: let_NewKey,    
                 Name: NewColumn, 
                 IsSelect:false,
-                VisibleIndex: 0
-                // VisibleIndex is updated in index.js
+                IsVisible: true
                 },
                 ...ss_Column    // Other Columns
             ])

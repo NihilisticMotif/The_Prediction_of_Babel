@@ -5,7 +5,7 @@
     color: rgb(0, 0, 0);
     padding: 10px;
     display: block;
-    width: 800px
+    width: 500px
 }
 
 .C02id {
@@ -22,4 +22,20 @@
 button.C02id,
 button {
     border: 2px solid rgb(0, 0, 0);
+}
+/*
+https: //stackoverflow.com/questions/50891589/how-to-add-a-scroll-bar-to-a-component-in-react
+*/
+#C02id_ScrollColumnName{
+    overflow-y: scroll;
+    height: 250px;
+}
+
+#C02id_SelectAllButton{
+    font-size: 20px;
+    padding: auto;
+}
+
+#C02id_SelectAll{
+    font-size: 15px;
 }

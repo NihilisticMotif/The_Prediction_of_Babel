@@ -12,12 +12,13 @@ const R_FilterColumn = (
 //****************************************************************************
 // FUNCTION_00: Update SS_Filter, so that index.js update the new filter word.
 //****************************************************************************
-function f_Filter(){
-        //const Value=event.target.value;
+    function f_Filter(ss_Column){
         let let_Input = document.getElementById('C02id_FilterColumnName').value
-        let ss_Column=[...SS_Column]
+        // Reset IsVisible to false,
+        // so that the only column that will appear
+        // are the column with name that match with SS_Filter
         for(let i=0;i<ss_Column.length;i++){
-            ss_Column[i].VisibleIndex=undefined
+            ss_Column[i].IsVisible=false
         }
         setSS_Column(ss_Column)
         setSS_Filter(let_Input)
@@ -40,19 +41,12 @@ function f_Filter(){
     }
 
     function f_DSort(IsD){
-        // 100,...,1,0
         let ss_Column = [...SS_Column]
-
-        for(let i=0;i<ss_Column.length;i++){
-            ss_Column[i].VisibleIndex=undefined
-        }
-
         ss_Column.sort(f_Sort("Name"));
         if(IsD===true){ss_Column.reverse();}
         // https://www.w3schools.com/jsref/jsref_sort.asp
         // https://stackoverflow.com/questions/11182924/how-to-check-if-javascript-object-is-json
-        setSS_Column(ss_Column)
-        setSS_Reset(Math.random())
+        f_Filter(ss_Column)
     }
 
 //****************************************************************************
@@ -62,7 +56,7 @@ function f_Filter(){
 <div class='C02id'>
 <h1 class='C02id'>Search:</h1>
 <input class='C02id' id='C02id_FilterColumnName'></input>
-<td><button class='C02id' onClick={f_Filter}>OK</button></td>
+<td><button class='C02id' onClick={()=>f_Filter([...SS_Column])}>OK</button></td>
 <td><button class='C02id' onClick={()=>f_DSort(true)}>Descending Sort</button></td>
 <td><button class='C02id' onClick={()=>f_DSort(false)}>Ascending Sort</button></td>
 </div>

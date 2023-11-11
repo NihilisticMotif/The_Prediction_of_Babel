@@ -10,17 +10,17 @@ const C_DefineColumn = (
     Index,           // Position of each Column in SS_Column
     Key,             // For some unknown reason, name key, result key = unidentify
     ColumnName,      // Name of this Column
-    IsSelect,       // Is visible in C01_Table?
-    VisibleIndex,       // If the column satisfy 1 of 3 conditions
-                        // 1. Consist of SS_Filter in their name
-                        // 2. New Column
-                        // 3. Renamed Column
-                        // Then it is visible in C02_Column and VisibleIndex !== undefined
+    IsSelect,        // Is visible in C01_Table?
+    IsVisible,       // If the column satisfy 1 of 3 conditions
+                     // 1. Consist of SS_Filter in their name
+                     // 2. New Column 
+                     // 3. Renamed Column 
+                     // Then it is visible in C02_Column and IsVisible = true
 
     // HOOK: setState()
     setSS_Reset,     // from ../index.js, f_Rename, f_Delete | Reset and Update Page
     // https://stackoverflow.com/questions/56649094/how-to-reload-a-component-part-of-page-in-reactjs
-    SS_Column,       // from ../index.js, f_Rename, f_Delete | List of All Column that VisibleIndex !== undefined
+    SS_Column,       // from ../index.js, f_Rename, f_Delete | List of All Column that IsVisible !== undefined
     setSS_Column,    // from ../index.js, f_Rename, f_Delete | Update SS_Column
 }) => 
 {
@@ -50,10 +50,10 @@ const C_DefineColumn = (
             setSS_IsSelect(true)}
     }
     if(SS_IsSelect===true){
-        JSX_SelectButton=<td><button class='C02id' onClick={f_Select} id={C02id_CheckButton} style={{backgroundColor: "red"}}>{SS_IsSelect.toString()}</button></td>
+        JSX_SelectButton=<td><button class='C02id' onClick={f_Select} id={C02id_CheckButton} style={{backgroundColor: "red"}}>X</button></td>
     }
     else{
-        JSX_SelectButton=<td><button class='C02id' onClick={f_Select} id={C02id_CheckButton} style={{backgroundColor: "white"}}>{SS_IsSelect.toString()}</button></td>
+        JSX_SelectButton=<td><button class='C02id' onClick={f_Select} id={C02id_CheckButton} style={{backgroundColor: "white"}}>X</button></td>
     }
 
 //****************************************************************************
@@ -64,27 +64,23 @@ const C_DefineColumn = (
 // SS_Display == 2 => Delete JSX Column  | f_OpenDelete => setSS_Display(2) => Open Delete JSX Column 
     function f_Cancel(){setSS_Display(0)}
     const C02id_Rename = 'C02id_Rename'+Key.toString()
-    function f_OpenRename(){
-        setSS_Display(1)
-        // Process
-        // 1. f_OpenRename
-        // 2. Check Name
-        // 3. Generate Key
-        // 4. Modify Column
-        // 5. Update Column
-    }
+    function f_OpenRename(){setSS_Display(1)}
     function f_Rename(){
-        let let_Name = document.getElementById(C02id_Rename).value 
+        let let_NewName = document.getElementById(C02id_Rename).value 
         // Check if the name is duplicate
-        if(SS_Column.map(Column=>Column.Name).includes(let_Name)===false){
-            // Modify List of All Column
+        if(SS_Column.map(Column=>Column.Name).includes(let_NewName)===false){
             let ss_Column = [...SS_Column];
-            ss_Column.splice(Index-1, 1,{
-                Key: Key,
-                Name: let_Name, 
-                IsSelect: SS_IsSelect,
-                VisibleIndex: 0
-            });
+            // Replace the previous name (the name with selected key) with new name
+            for(let i=0;i<ss_Column.length;i++){
+                if(ss_Column[i].Key===Key){
+                    ss_Column.splice(i, 1,{
+                    Key: Key,
+                    Name: let_NewName, 
+                    IsSelect: SS_IsSelect,
+                    IsVisible: true
+                });
+                }
+            }
             setSS_Column(ss_Column);
             setSS_Reset(Math.random())
             // https://stackoverflow.com/questions/11688692/how-to-create-a-list-of-unique-items-in-javascript
@@ -92,18 +88,20 @@ const C_DefineColumn = (
     }
     function f_OpenDelete(){
         setSS_Display(2)
-        // Process
-        // 1. f_OpenDelete
-        // 2. Modify Column
-        // 5. Update Column
     }
     function f_Delete(){
         // https://youtu.be/XtS14dXwvwE?si=rYQOe_tJbxmSnDWE
         let ss_Column = [...SS_Column];
-        ss_Column.splice(Index-1, 1);
+        // Delete the column with selected key
+        for(let i=0;i<ss_Column.length;i++){
+            if(ss_Column[i].Key===Key){
+                ss_Column.splice(i, 1);
+            }
+        }
         setSS_Column(ss_Column);
         setSS_Reset(Math.random())
     }
+
     // JSX = representing in JSX
     let JSX_Column
     // Default Column JSX
@@ -112,12 +110,9 @@ const C_DefineColumn = (
 <>
 <div>
 {JSX_SelectButton}
-<td><button class='C02id' >Index = {Index}</button></td>
-<td><button class='C02id' >Key = {Key}</button></td>
-<td><button class='C02id' >VisibleIndex = {VisibleIndex.toString()}</button></td>
 <td><button class='C02id' onClick={f_OpenRename}>Rename</button></td>
 <td><button class='C02id' onClick={f_OpenDelete}>Delete</button></td>
-<td><button class='C02id' onClick={f_OpenSetting}>Setting</button></td>
+<td><button class='C02id' onClick={f_OpenSetting}>...</button></td>
 <td><h1 class='C02id'>{ColumnName}</h1></td>
 </div>
 </>
@@ -126,7 +121,7 @@ const C_DefineColumn = (
         JSX_Column=
 <>
 <div>
-<td><input class='C02id' id={C02id_Rename}></input></td>
+<td><h1 class='C02id'>"{ColumnName}"" to </h1><input class='C02id' id={C02id_Rename}></input></td>
 <td><button class='C02id' onClick={f_Rename}>OK</button></td>
 <td><button class='C02id' onClick={f_Cancel}>Cancel</button></td>
 </div>
@@ -172,7 +167,7 @@ return (
 <div class='C02id' key={Key}>
 {JSX_Column}
 </div>
-    )
+)
 }
 //****************************************************************************
 export default C_DefineColumn
