@@ -11,19 +11,16 @@ const C_DefineColumn = (
     Key,             // For some unknown reason, name key, result key = unidentify
     ColumnName,      // Name of this Column
     IsSelect,       // Is visible in C01_Table?
-    VisibleIndex,       // Is visuble in C02_Column?
-                        // If the column satisfy 1 of 3 conditions
+    VisibleIndex,       // If the column satisfy 1 of 3 conditions
                         // 1. Consist of SS_Filter in their name
                         // 2. New Column
                         // 3. Renamed Column
-                        // Then it is visible in C02_Column and VisibleIndex=true
+                        // Then it is visible in C02_Column and VisibleIndex !== undefined
 
     // HOOK: setState()
     setSS_Reset,     // from ../index.js, f_Rename, f_Delete | Reset and Update Page
     // https://stackoverflow.com/questions/56649094/how-to-reload-a-component-part-of-page-in-reactjs
-    SS_FilterColumn,    // from ../index.js, f_Rename           | List of NewColumn
-    setSS_FilterColumn, // from ../index.js, f_Rename           | Update SS_FilterColumn
-    SS_Column,       // from ../index.js, f_Rename, f_Delete | List of All Column that VisibleIndex=true
+    SS_Column,       // from ../index.js, f_Rename, f_Delete | List of All Column that VisibleIndex !== undefined
     setSS_Column,    // from ../index.js, f_Rename, f_Delete | Update SS_Column
 }) => 
 {
@@ -67,34 +64,45 @@ const C_DefineColumn = (
 // SS_Display == 2 => Delete JSX Column  | f_OpenDelete => setSS_Display(2) => Open Delete JSX Column 
     function f_Cancel(){setSS_Display(0)}
     const C02id_Rename = 'C02id_Rename'+Key.toString()
-    function f_OpenRename(){setSS_Display(1)}
+    function f_OpenRename(){
+        setSS_Display(1)
+        // Process
+        // 1. f_OpenRename
+        // 2. Check Name
+        // 3. Generate Key
+        // 4. Modify Column
+        // 5. Update Column
+    }
     function f_Rename(){
         let let_Name = document.getElementById(C02id_Rename).value 
         // Check if the name is duplicate
         if(SS_Column.map(Column=>Column.Name).includes(let_Name)===false){
+            // Modify List of All Column
             let ss_Column = [...SS_Column];
-            // https://react.dev/learn/updating-arrays-in-state#updating-arrays-without-mutation
-            // use slice instead of splice because the state should not be mutated.
-            ss_Column.slice(Index-1, 1,{
+            ss_Column.splice(Index-1, 1,{
                 Key: Key,
                 Name: let_Name, 
                 IsSelect: SS_IsSelect,
-                VisibleIndex: VisibleIndex
+                VisibleIndex: 0
             });
-            setSS_Reset(Math.random())
-            //const UniqueNewColumn = [...new Set(let_NewColumn)];
-            // https://stackoverflow.com/questions/11688692/how-to-create-a-list-of-unique-items-in-javascript
-            //setSS_FilterColumn(UniqueNewColumn);
             setSS_Column(ss_Column);
+            setSS_Reset(Math.random())
+            // https://stackoverflow.com/questions/11688692/how-to-create-a-list-of-unique-items-in-javascript
         }
     }
-    function f_OpenDelete(){setSS_Display(2)}
+    function f_OpenDelete(){
+        setSS_Display(2)
+        // Process
+        // 1. f_OpenDelete
+        // 2. Modify Column
+        // 5. Update Column
+    }
     function f_Delete(){
         // https://youtu.be/XtS14dXwvwE?si=rYQOe_tJbxmSnDWE
         let ss_Column = [...SS_Column];
         ss_Column.splice(Index-1, 1);
-        setSS_Reset(Math.random())
         setSS_Column(ss_Column);
+        setSS_Reset(Math.random())
     }
     // JSX = representing in JSX
     let JSX_Column

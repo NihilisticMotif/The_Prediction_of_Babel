@@ -1,3 +1,156 @@
+
+    const [SS]
+ 
+        else if(ss_Column[i].VisibleIndex===true){
+            ss_Column[i].VisibleIndex=let_VisibleIndex
+            let_VisibleIndex+=1
+        }
+ 
+setSS_Reset(Math.random())
+ 
+    function f_ResetVisible(){
+        
+    }
+ 
+    function f_ResetVisible(){
+        
+    }
+ 
+        else if(ss_Column[i].VisibleIndex===true){
+            ss_Column[i].VisibleIndex=let_VisibleIndex
+            let_VisibleIndex+=1
+        }
+ 
+setSS_Reset(Math.random())
+ 
+pdate Columns
+ 
+ss_Column[i].VisibleIndex===true
+ 
+        else if(){}
+ 
+        else if(){}
+ 
+ || ss_Column[i].VisibleIndex===undefined
+ 
+            alert(let_Name)
+ 
+            alert(JSON.stringify(ss_Column))
+ 
+            // https://react.dev/learn/updating-arrays-in-state#updating-arrays-without-mutation
+ 
+alert(let_Name)
+ 
+and VisibleIndex=true
+ 
+ Is visible in C02_Column?
+                        //
+ 
+            // select the column with match name
+ 
+    //setlet_FilterColumn={setlet_FilterColumn}
+ 
+{Indicator}
+ 
+    // SS_FilterColumn is the list of visible column
+    const [SS_FilterColumn,setSS_FilterColumn]=useState([])
+ 
+                SS_FilterColumn={SS_FilterColumn}
+                setSS_FilterColumn={setSS_FilterColumn}
+ 
+    
+    useEffect(() => {
+    setSS_FilterColumn(ss_FilterColumn.map((Column)=>Column.Key))
+    }, []);
+ 
+        //setSS_FilterColumn([])
+ 
+    //setSS_FilterColumn,// from ../index.js, Reset SS_FilterColumn as []
+ 
+    SS_FilterColumn,    // from ../index.js, f_Rename           | List of NewColumn
+    setSS_FilterColumn, // from ../index.js, f_Rename           | Update SS_FilterColumn
+ 
+            // Modify List of All Visible Column
+            // let ss_FilterColumn = [...SS_FilterColumn];
+            // // https://react.dev/learn/updating-arrays-in-state#updating-arrays-without-mutation
+            // ss_FilterColumn.slice(VisibleIndex-1, 1,{
+            //     Key: Key,
+            //     Name: let_Name, 
+            //     IsSelect: SS_IsSelect,
+            //     VisibleIndex: VisibleIndex
+            // });
+ 
+    SS_FilterColumn={SS_FilterColumn}
+    setSS_FilterColumn={setSS_FilterColumn}
+ 
+    SS_FilterColumn,    // from ../index.js, Allow New Column to appear
+    setSS_FilterColumn, // from ../index.js, Allow New Column to appear
+ 
+
+            // Add New Column in List of All Visible Column
+            let ss_FilterColumn = [...SS_FilterColumn]
+            setSS_FilterColumn([let_NewKey,...ss_FilterColumn])
+ 
+setSS_Column(ss_Column);
+ 
+setSS_Column(ss_Column);
+ 
+        setSS_Column(ss_Column);
+ 
+
+        setSS_Reset(Math.random())
+ 
+        let ss_FilterColumn = [...SS_FilterColumn];
+        ss_FilterColumn.splice(VisibleIndex-1, 1);
+ 
+        setSS_FilterColumn(ss_FilterColumn);
+ 
+        let ss_FilterColumn = [...SS_FilterColumn];
+        ss_FilterColumn.splice(VisibleIndex-1, 1);
+ 
+        // 2. Check Name
+ 
+
+            // Update List of All Visible Column
+ 
+            
+            // Update List of All Column
+ 
+
+            // Reset
+ 
+// 
+ 
+            // Add New Column in List of All Visible Column
+            //let ss_FilterColumn = [...SS_FilterColumn]
+            //setSS_FilterColumn([NewKey,...ss_FilterColumn])
+ 
+//let ss_FilterColumn = [...SS_FilterColumn]
+            //setSS_FilterColumn([NewKey,...ss_FilterColumn])
+ 
+// Add New Column in List of All Visible Column
+ 
+// Add New Column in List of All Column
+ 
+            //let list = [...SS_Column];
+ 
+SS_Column = 
+ 
+SS_FilterColumn = 
+ 
+
+            //const UniqueNewColumn = [...new Set(let_NewColumn)];
+ 
+            //setSS_FilterColumn(UniqueNewColumn);
+ 
+// SS_FilterColumn = List of All Visible Column
+ 
+            // use slice instead of splice because the state should not be mutated.
+ 
+    //alert(ss_FilterColumn)
+ 
+    //let ss_NewColumn=[...SS_FilterColumn]
+ 
 let ss_FilterColumn = [...SS_FilterColumn];
  
             //ss_NewColumn.push(Key);

@@ -5,10 +5,9 @@ const C_CreateColumn = (
 //****************************************************************************
 {
     // HOOK: setState()
-    //SS_FilterColumn,    // from ../index.js, Allow New Column to appear
-    //setSS_FilterColumn, // from ../index.js, Allow New Column to appear
     SS_Column,       // from ../index.js, Update Columns
     setSS_Column,    // from ../index.js, Update Columns
+    setSS_Reset      // from ../index.js, Reset after update Column
 }) => 
 {
 //****************************************************************************
@@ -17,26 +16,31 @@ const C_CreateColumn = (
     function f_CreateColumn(){
         // https://stackoverflow.com/questions/31048953/what-are-these-three-dots-in-react-doing
         let NewColumn=document.getElementById('C02id_CreateNewColumn').value.toString();
-        // If the name is not longer than 50, then Create new column
+        // If the name is not longer than 50 and unique, then Create new column
         if(NewColumn.toString().length>0 
             && NewColumn.toString().length<50 
             && SS_Column.map(Column=>Column.Name).includes(NewColumn)===false){
             // https://stackoverflow.com/questions/43846531/check-if-dictionary-object-in-array-contains-certain-value-in-javascript
-            //let list = [...SS_Column];
-            let NewKey = Math.random()
-            while(SS_Column.map(Column=>Column.Key).includes(NewKey)===true){
-                NewKey = Math.random()
+            
+            setSS_Reset(Math.random())
+            // Generate New Key
+            let let_NewKey = Math.random()
+            while(SS_Column.map(Column=>Column.Key).includes(let_NewKey)===true){
+                let_NewKey = Math.random()
             }
-            //let ss_FilterColumn = [...SS_FilterColumn]
-            //setSS_FilterColumn([NewKey,...ss_FilterColumn])
+
+            // Add New Column in List of All Column
             let ss_Column = [...SS_Column]
             setSS_Column([{
-                Key: NewKey,    // Property of the column 
+                Key: let_NewKey,    // Property of the column 
                 Name: NewColumn, 
                 IsSelect:false,
-                VisibleIndex: true},
+                VisibleIndex: 0
+                // VisibleIndex is updated in index.js
+                },
                 ...ss_Column    // Other Columns
             ])
+            setSS_Reset(Math.random())
         }
     }
 //****************************************************************************

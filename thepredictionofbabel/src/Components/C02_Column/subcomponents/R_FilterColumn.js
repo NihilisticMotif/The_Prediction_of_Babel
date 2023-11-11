@@ -6,18 +6,21 @@ const R_FilterColumn = (
     // HOOK: setState()
     setSS_Reset,    // from ../index.js, Reset After update activate setSS_Filter
     setSS_Filter,   // from ../index.js, Filter Column that match with SS_Filter
-    //setSS_FilterColumn,// from ../index.js, Reset SS_FilterColumn as []
     SS_Column,      // from ../index.js, Sort Column
     setSS_Column,   // from ../index.js, Sort Column
 }) => {
 //****************************************************************************
 // FUNCTION_00: Update SS_Filter, so that index.js update the new filter word.
 //****************************************************************************
-    function f_Filter(){
+function f_Filter(){
         //const Value=event.target.value;
         let let_Input = document.getElementById('C02id_FilterColumnName').value
+        let ss_Column=[...SS_Column]
+        for(let i=0;i<ss_Column.length;i++){
+            ss_Column[i].VisibleIndex=undefined
+        }
+        setSS_Column(ss_Column)
         setSS_Filter(let_Input)
-        //setSS_FilterColumn([])
         setSS_Reset(Math.random())
     }
 //****************************************************************************
@@ -35,17 +38,23 @@ const R_FilterColumn = (
             return let_Result * let_SortOrder;
         }
     }
+
     function f_DSort(IsD){
         // 100,...,1,0
         let ss_Column = [...SS_Column]
+
+        for(let i=0;i<ss_Column.length;i++){
+            ss_Column[i].VisibleIndex=undefined
+        }
+
         ss_Column.sort(f_Sort("Name"));
         if(IsD===true){ss_Column.reverse();}
         // https://www.w3schools.com/jsref/jsref_sort.asp
         // https://stackoverflow.com/questions/11182924/how-to-check-if-javascript-object-is-json
-        //setSS_FilterColumn([])
-        setSS_Reset(Math.random())
         setSS_Column(ss_Column)
+        setSS_Reset(Math.random())
     }
+
 //****************************************************************************
 // OUTPUT
 //****************************************************************************
