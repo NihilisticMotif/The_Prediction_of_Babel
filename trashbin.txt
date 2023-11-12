@@ -1,3 +1,407 @@
+|'true'|'false'
+ 
+oid
+ 
+void
+ 
+Number
+ 
+            let result:string= Number.message; // error under useUnknownInCatchVariables 
+            if (typeof Number === "string") {
+                e.toUpperCase() // works, `e` narrowed to string
+            } else if (e instanceof Error) {
+                e.message // works, `e` narrowed to Error
+            }
+ 
+
+
+//************************************************************************************************************
+
+
+
+//************************************************************************************************************
+
+
+//************************************************************************************************************
+
+//************************************************************************************************************
+
+
+//************************************************************************************************************
+
+
+//************************************************************************************************************
+
+
+//************************************************************************************************************
+
+
+ 
+// TUTORIAL13_Union
+ 
+// TUTORIAL12_DateVariable
+
+type Fox={
+    Species:string,
+    LifeSpan:number,
+    WhatDoesTheFoxSay: (Sound:string)=>void
+}
+
+let Dog:Fox = {
+    Species:'Dog',
+    LifeSpan:18,
+    WhatDoesTheFoxSay: (Sound:string)=>{console.log(Sound)}
+}
+ 
+// TUTORIAL11_A_Object
+
+// Object Variable
+let pixel:{
+    Artist:string,
+    readonly R:number,
+    // readonly make the variable inside object become immutable.
+    G:number,
+    B:number,
+} = {
+    Artist:"CheChe",
+    R:200,
+    G:200,
+    B:100,
+}
+// Pixel.R=180 // Immutable
+// Pixel.G=180 // Mutable
+
+//************************************************************************************************************
+
+// TUTORIAL11_B_MethodOfObject
+
+let fox:{
+    Species:string,
+    LifeSpan:number,
+    WhatDoesTheFoxSay: (Sound:string)=>void
+} = {
+    Species:'Cat',
+    LifeSpan:20,
+    WhatDoesTheFoxSay: (Sound:string)=>{console.log(Sound)}
+}
+
+//************************************************************************************************************
+
+// TUTORIAL11_C_DateVariable
+
+// Date Variable
+// https://stackoverflow.com/questions/45485073/how-do-i-express-a-date-type-in-typescript
+const d: Date = new Date();
+ 
+// TUTORIAL10_Function 
+
+/*
+// in tsconfig.json
+    ...,
+    "noUnusedLocals": true,  
+    // Warn that you define unused variable
+    ...,
+    "noUnusedParameters": true,   
+    // Warn that you define the unused parameter in the function. 
+    ...,
+    "noImplicitReturns": true,   
+    // Warn that you forget to specify what the output of the function should be.
+    ...,
+*/
+
+function LeakyReLU(Z: number,a=0.001):number{
+    if(Z<0)
+        return a*Z
+    else
+        return Z
+}
+
+function GoodBye(Name: string):void{
+    console.log('Good bye '+Name)
+}
+ 
+// TUTORIAL09_Enums 
+
+const enum TierZoo{F,D,C,B,A,S}
+//const enum TierZoo{F=-1,D,C,B,A,S}
+//const enum TierZoo{F='Grade F',D='Grade D',C='Grade C',B='Grade B',A='Grade A',S='Grade S'}
+let Human: TierZoo=TierZoo.S
+console.log(Human)
+// 5
+ 
+const enum TierZoo{F,D,C,B,A,S}
+//const enum TierZoo{F=-1,D,C,B,A,S}
+//const enum TierZoo{F='Grade F',D='Grade D',C='Grade C',B='Grade B',A='Grade A',S='Grade S'}
+let Human: TierZoo=TierZoo.S
+console.log(Human)
+// 5
+ 
+// TUTORIAL08_Tuple 
+// The Tuple should not have element more than 2 (key value pair)
+// because it will make the code more difficult to maintain.
+let Goptjaam:[number,string]=[1,'tuwng']
+ 
+// TUTORIAL07_Array 
+// Every element inside Array should have same type.
+let EvlPll: string[]=[
+    'That Handsome Devil',
+    'Charlie',
+    'Chonny Jash',
+    'Satan',
+    'Villain',
+    'Good and Evil'
+]
+let PrimeLower20:number[]=[2,3,5,7,11,13,17,19]
+ 
+/ TUTORIAL06_AnyType 
+// Avoid using "Any" Data Type as much as possible. 
+
+/*
+// in tsconfig.json
+
+*/
+let AnyOneHere
+let EveryWhereAtTheEndOfTime: any = 'Pomni'
+
+//// Error
+//function Print(Name){
+//    console.log(Name)
+//}
+
+function ReLU(Z: number){
+    if(Z<0)
+        return 0
+    else
+        return Z
+}
+
+function Hello(Name: string){
+    console.log('Hello '+Name)
+}
+
+ 
+
+//************************************************************************************************************
+ 
+//************************************************************************************************************
+ 
+let Anything=9
+ 
+function Print(Name){
+    console.log(Name)
+}
+ 
+let hi=0
+ 
+// 
+ 
+// 
+ 
+    "exactOptionalPropertyTypes": true,     
+ 
+// 
+ 
+// Date Variable
+// https://stackoverflow.com/questions/45485073/how-do-i-express-a-date-type-in-typescript
+const d: Date = new Date();
+ 
+    // R:number,
+ 
+// Pixel.R=180 // Immutable
+// Pixel.G=180 // Mutable
+ 
+const d:Date = "2022-03-25"
+ 
+
+let Picture:{
+    Title:string,
+    Artist:string,
+    IsAllowAI2Learn:boolean,
+    Color_R:number,
+    Color_G:number,
+    Color_B:number,
+    Size_X:number,
+    Size_Y:number,
+} = {
+    Title:'The Door of the Reality',
+    Artist:"CheChe",
+    IsAllowAI2Learn:true,
+    Color_R:200,
+    Color_G:200,
+    Color_B:100,
+    Size_X:120,
+    Size_Y:60,
+}
+ 
+    Title:string,
+    Artist:string,
+    IsAllowAI2Learn:boolean,
+ 
+    Size_X:number,
+    Size_Y:number,
+ 
+    Title:'The Door of the Reality',
+    Artist:"CheChe",
+    IsAllowAI2Learn:true,
+ 
+    Size_X:120,
+    Size_Y:60,
+ 
+    Position_X:number,
+    Position_Y:number,
+ 
+type of
+ 
+            // Enable error reporting for codepaths that do not explicitly return in a function. 
+ 
+            // Interpret optional property types as written, rather than adding 'undefined'. 
+ 
+            // Raise an error when a function parameter isn't read. 
+ 
+            // Enable error reporting when local variables aren't read. 
+ 
+//const enum TierZoo{Worse='F',Bad='D',Na='C',Good='B',Better='A',Best='S'}
+ 
+number
+ 
+const Ame:string='oo'
+ 
+u06_AnyType
+ 
+// Avoid using "Any" Data Type as much as possible. 
+let AnyOneHere
+let EveryWhereAtTheEndOfTime: any = 'Pomni'
+
+function ReLU(Z: number){
+    if(Z<0)
+        return 0
+    else
+        return Z
+}
+
+function Hello(Name: string){
+    console.log('Hello '+Name)
+}
+ 
+
+// TUTORIAL: Tu06_AnyType.txt
+ 
+// TUTORIAL: Tu05_BuildInDataType.txt
+ 
+// 
+ 
+/src/index.ts",
+            "/Users/imac/Desktop/SoloOpenSourceProject/The_Prediction_of_Babel
+ 
+    "target": "es5",
+    "module": "commonjs",
+    "outDir": "out",
+ 
+// create tsconfig.json file
+$ tsc --init
+
+/*
+// tsconfig.json 
+// [control] + [space] => see all the avaible setting option
+{
+  "compilerOptions": {
+    ...
+    "target": "es2016", // What version of JS that the compiler use?
+    ...
+    "module": "common.js",
+    "rootDir": "./MySelectedFolder",    // Directory that contain the source code.
+    "outDir": "./MyJSFolder",           // Directory that contain JS File
+    "removeComments": true, // Remove all the comment of the complied JS files.
+    "onEmitOnError": true,  // Remove all the bug (error code) of the complied JS files.
+    ...
+  }
+}
+// compile MyFile.ts
+// tsc MyFile.ts
+*/
+ 
+// Remove all the bug (error code) of the complied JS files.
+ 
+// Remove all the comment of the complied JS files.
+ 
+// Directory that contain JS File, dist = distribute
+ 
+// Directory that contain the source code.
+ 
+// What version of JS that the compiler use?
+ 
+/*
+ 
+
+//****************************************************************************************************************************************************************
+
+
+ 
+// Tu03_ConfigFile.txt
+// create tsconfig.json file
+// $ tsc --init
+
+/*
+// tsconfig.json 
+// [control] + [space] => see all the avaible setting option
+{
+  "compilerOptions": {
+    ...
+    "target": "es2016", // What version of JS that the compiler use?
+    ...
+    "module": "common.js",
+    "rootDir": "./MySelectedFolder",    // Directory that contain the source code.
+    "outDir": "./MyJSFolder",           // Directory that contain JS File
+    "removeComments": true, // Remove all the comment of the complied JS files.
+    "onEmitOnError": true,  // Remove all the bug (error code) of the complied JS files.
+    ...
+  }
+}
+// compile MyFile.ts
+// $ tsc MyFile.ts
+// compile all file in the project
+// $ tsc
+*/
+ 
+ MyFile.ts
+ 
+$ 
+ 
+MyFile.ts
+ 
+// 
+ 
+// 
+ 
+ile
+ 
+// 
+ 
+JSFiles
+ 
+// 
+ 
+// 
+ 
+.userAgent
+ 
+"Browser JavaScript engine:", 
+ 
+es2016
+ 
+ version 
+ 
+JavaScript version 
+ 
+Hello='0'
+ 
+
+Q: What is the purpose of Type Script?
+
+Q: What is the different between Type Script and Java Script?
+ 
+let appName: string;
+ 
 <U_SelectAll
     SS_SelectAll={SS_SelectAll}
     setSS_SelectAll={setSS_SelectAll}
